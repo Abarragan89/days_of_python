@@ -1,6 +1,9 @@
 from turtle import Turtle
 
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+extra_pieces = [(-60, 0), (-80, 0), (-100, 0), (-120, 0), (-140, 0), (160, 0)]
+STARTING_POSITIONS.extend(extra_pieces)
+
 class Snake:
     def __init__(self):
         self.segments = []
@@ -20,7 +23,6 @@ class Snake:
         self.segments[0].forward(self.speed)
 
     def up(self):
-        print(self.segments[0].heading())
         if self.segments[0].heading() != 270:
             self.segments[0].setheading(90)
 
@@ -44,7 +46,8 @@ class Snake:
         self.segments.append(snake_square)
 
     def extends(self):
-        self.add_segment(self.segments[-1].position)
+        print("the position added", self.segments[-1].position())
+        self.add_segment(self.segments[-1].position())
 
 
 
