@@ -2,7 +2,8 @@ from turtle import Turtle
 
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 extra_pieces = [(-60, 0), (-80, 0), (-100, 0), (-120, 0), (-140, 0), (160, 0)]
-STARTING_POSITIONS.extend(extra_pieces)
+# STARTING_POSITIONS.extend(extra_pieces)
+
 
 class Snake:
     def __init__(self):
@@ -44,6 +45,13 @@ class Snake:
         snake_square.color("white")
         snake_square.goto(position)
         self.segments.append(snake_square)
+
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
 
     def extends(self):
         print("the position added", self.segments[-1].position())
