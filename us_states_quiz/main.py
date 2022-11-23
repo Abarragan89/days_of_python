@@ -33,12 +33,7 @@ while len(guessed_states) < 50:
 
 
 #states to learn.csv
-study_states = []
-for state in all_states:
-    if state not in guessed_states:
-        study_states.append(state)
-
-print(study_states)
+study_states = [state for state in all_states if state not in guessed_states]
 data_frame_from_list = pandas.DataFrame(study_states)
 data_frame_from_list.to_csv("states_to_study.csv")
 
