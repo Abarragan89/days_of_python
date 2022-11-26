@@ -26,13 +26,13 @@ def start_timer():
     global REPS
     REPS += 1
     if REPS == 10:
-        count_down(LONG_BREAK_MIN)  # multiply by 60 before finishing
+        count_down(LONG_BREAK_MIN * 60)  # multiply by 60 before finishing
         timer_label.config(text="Break", fg=RED)
     elif REPS % 2 == 0:
-        count_down(SHORT_BREAK_MIN)
+        count_down(SHORT_BREAK_MIN * 60)
         timer_label.config(text="Break", fg=PINK)
     else:
-        count_down(WORK_MIN)
+        count_down(WORK_MIN * 60)
         timer_label.config(text="Work", fg=GREEN)
 
 
