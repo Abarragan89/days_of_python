@@ -1,0 +1,4 @@
+name,email,year,month,day
+Reesie Dindal,anthony.bar.89@gmail.com,1993,10,04
+Genny Barragan,anthony.bar.89@gmail.com,1964,11,29
+Adalberto Barragan,anthony.bar.89@gmail.com,1964,2,14
