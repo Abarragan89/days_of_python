@@ -41,16 +41,19 @@ data = response.json()
 one_day_ago_closing = data["Time Series (Daily)"][str(one_day_ago.date())]["4. close"]
 two_days_ago_closing = data["Time Series (Daily)"][str(two_days_ago.date())]["4. close"]
 difference = float(one_day_ago_closing) - float(two_days_ago_closing)
+percentage_change = (difference / float(one_day_ago_closing)) * 100
+
+
 # Dynamically create text for SMS message
-if difference > 0:
-    stock_status = f"🔺 {round(abs(difference), 2)}%"
-elif difference < 0:
-    stock_status = f"🔻 {round(abs(difference), 2)}%"
+if percentage_change > 0:
+    stock_status = f"🔺 {round(abs(percentage_change), 2)}%"
+elif percentage_change < 0:
+    stock_status = f"🔻 {round(abs(percentage_change), 2)}%"
 
 
 def compare_closing_prices():
     """Compares the two last closing prices and gets news about company if difference is greater than 5."""
-    if abs(difference) > 5:
+    if abs(percentage_change) > 5:
         get_news()
 
 
