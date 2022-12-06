@@ -50,7 +50,7 @@ elif difference < 0:
 
 def compare_closing_prices():
     """Compares the two last closing prices and gets news about company if difference is greater than 5."""
-    if abs(difference) > 0:
+    if abs(difference) > 5:
         get_news()
 
 
