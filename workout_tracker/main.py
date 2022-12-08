@@ -7,6 +7,8 @@ load_dotenv()
 
 NUTRITION_API_KEY = os.getenv("NUTRITION_API_KEY")
 NUTRITION_ID = os.getenv("NUTRITION_ID")
+AUTHORIZATION_TOKEN = os.getenv("AUTHORIZATION_TOKEN")
+print(AUTHORIZATION_TOKEN)
 
 
 # Add exercise data to Google Sheets using Sheety
@@ -19,6 +21,7 @@ def add_workout(workout):
     sheety_post_endpoint = "https://api.sheety.co/dfdd26d04cb8a8c2d20e1e57a8d70b8b/workouts/workouts"
     sheety_post_headers = {
         "Content-Type": "application/json",
+        "Authorization": f"Bearer {AUTHORIZATION_TOKEN}"
     }
     sheety_post_payload = {
         "workout": {
