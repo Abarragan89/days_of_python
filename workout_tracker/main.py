@@ -8,7 +8,6 @@ load_dotenv()
 NUTRITION_API_KEY = os.getenv("NUTRITION_API_KEY")
 NUTRITION_ID = os.getenv("NUTRITION_ID")
 AUTHORIZATION_TOKEN = os.getenv("AUTHORIZATION_TOKEN")
-print(AUTHORIZATION_TOKEN)
 
 
 # Add exercise data to Google Sheets using Sheety
