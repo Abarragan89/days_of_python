@@ -13,7 +13,7 @@ movie_titles_list = []
 for movie_title_el in all_movie_titles_html_elements:
     movie_titles_list.append(movie_title_el.get_text())
 
-with open("movie_list.txt", mode="a") as movie_data_file:
+with open("movie_list.txt", mode="w") as movie_data_file:
     for num in range(len(movie_titles_list) - 1, 0, -1):
         movie_data_file.write(f"{movie_titles_list[num]}\n")
 
